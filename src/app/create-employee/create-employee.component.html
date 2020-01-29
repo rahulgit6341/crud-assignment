@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <form (ngSubmit)="onSubmit(formValue)" #formValue="ngForm">
+                <div class="form-group">
+                    <label for="name">Username</label>
+                    <input type="text" class="form-control" id="username" required ngModel name="name" #name="ngModel">
+                    <span class="help-block" *ngIf="!name.valid && name.touched">Please enter a name</span>
+                </div>
+            
+                <div class="form-group">
+                    <label for="designation">Designation</label>
+                    <input type="text" class="form-control" id="designation" required ngModel name="designation" #designation="ngModel">
+                    <span class="help-block" *ngIf="!designation.valid && designation.touched">Please enter a designation</span>
+                </div>
+            
+                <div class="form-group">
+                    <label for="salary">Salary</label>
+                    <input type="number" class="form-control" id="salary" required ngModel name="salary" #salary="ngModel">
+                    <span class="help-block" *ngIf="!salary.valid && salary.touched">Please enter a salary</span>   
+                </div>
+                <div class="form-group">
+                    <button [disabled]="!formValue.valid" type="submit" class="btn btn-primary">Submit</button>
+                    <button style="margin-left: 20px;" type="reset" class="btn btn-primary">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

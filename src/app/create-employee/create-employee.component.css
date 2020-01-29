@@ -1,0 +1,16 @@
+button:disabled{
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+input.ng-touched.ng-invalid{
+    border: 1px solid #f00;
+}
+.help-block{
+    color: #f00;
+}
+input{
+    width: 40%;
+}
+label{
+    font-weight: 600;
+}

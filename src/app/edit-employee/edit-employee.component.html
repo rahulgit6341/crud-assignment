@@ -1,0 +1,29 @@
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-12">
+            <form (ngSubmit)="onSubmit()" #formData="ngForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" required [(ngModel)]="employee.name" name="name" #name ="ngModel">
+                    <span class="help-block" *ngIf="!name.valid && name.touched">Please enter a name</span>
+                </div>
+            
+                <div class="form-group">
+                    <label for="designation">Designation</label>
+                    <input type="text" class="form-control" id="designation" required [(ngModel)]="employee.designation" name="designation" #designation="ngModel">
+                    <span class="help-block" *ngIf="!designation.valid && designation.touched">Please enter a designation</span>
+                </div>
+            
+                <div class="form-group">
+                    <label for="salary">Salary</label>
+                    <input type="number" class="form-control" id="salary" required [(ngModel)]="employee.salary" name="salary" #salary="ngModel">
+                    <span class="help-block" *ngIf="!salary.valid && salary.touched">Please enter a salary</span>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="!formData.valid" type="submit" class="btn btn-primary">Submit</button>
+                    <button style="margin-left: 20px;" type="text" (click)="cancel()" class="btn btn-primary">cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
